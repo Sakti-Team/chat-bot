@@ -79,11 +79,10 @@ function waitAndResponce(inputText) {
             sendTextMessage("You want to check my projects? Then just jump into my Github Account.<br><br><div class='social'><a target='_blank' href='https://github.com/sakti-team'> <div class='socialItem'><img class='socialItemI' src='images/github.svg' alt=''></div> </a></div>");
             break;
         default:
-        var fetch = require('node-fetch')
-        fetch(`https://simsimi.info/api/?text=hallo&lc=id`).then(res => res.json()).then(teks =>{
+        fetch(`https://simsimi.info/api/?text=${inputText}&lc=id`, { method: "GET", headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' } }).then(res => res.json).then(teks =>{
             sendTextMessage(teks.success)
-            })
-            break;
+        })
+        break;
     }
 
 
