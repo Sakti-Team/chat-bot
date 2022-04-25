@@ -79,8 +79,8 @@ function waitAndResponce(inputText) {
             sendTextMessage("You want to check my projects? Then just jump into my Github Account.<br><br><div class='social'><a target='_blank' href='https://github.com/sakti-team'> <div class='socialItem'><img class='socialItemI' src='images/github.svg' alt=''></div> </a></div>");
             break;
         default:
-        axios(`https://dwiqi.my.id/api/simsimi`, { method: "POST", headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, data: JSON.stringify({tx: inputText, lc: 'id'}) }).then(teks =>{
-            sendTextMessage(teks.data.msg.success)
+        axios(`https://simsimi.info/api/?text=${inputText}&lc=id`, { method: "GET", headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' } }).then(teks =>{
+            sendTextMessage(teks.data.success)
         })
         break;
     }
